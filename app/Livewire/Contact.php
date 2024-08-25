@@ -5,13 +5,13 @@ namespace App\Livewire;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class About extends Component
+class Contact extends Component
 {
 
-    #[Title('About')] // Set title component
+    #[Title('Contact')] // Set title component
 
     public function render()
     {
-        return view('livewire.about');
+        return view('livewire.contact');
     }
 }
