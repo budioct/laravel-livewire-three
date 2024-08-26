@@ -1,0 +1,9 @@
+/*
+import css dari bootstrap yang sudah di install oleh npm
+@import "bootstrap"; // node_modules/bootstrap // lokasi css
+@import "bootstrap-icons/font/bootstrap-icons.css"; // node_modules/bootstrap-icons // lokasi css
+*/
+
+@import "bootstrap";
+
+@import "bootstrap-icons/font/bootstrap-icons.css";

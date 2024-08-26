@@ -25,6 +25,12 @@ class PostForm extends Form
         // posts() adalah relasi ke model user()
         $user->posts()->create($save); // proses eloquent model create
 
+        // alert dari laravel
+        // session()->flash('message', 'Post successfully created.'); // (key, message) // handle alert setelah create data
+
+        // alert dari library spatie/laravel-flash
+        flash('Post successfully created.', 'success');
+
         $this->reset(); // reset() // akan otomatis instance $title $body menjadi blank '', setelah proses create()
     }
 
