@@ -7,16 +7,21 @@
             <form wire:submit="save">
                 <div class="mb-4">
                     <lable for="title" class="form-label">Title</lable>
-                    <input wire:model="title" class="form-control" id="title" rows="3">
-                    @error('title')
+                    {{--
+
+                        wire:model="form.title" // karena kita implementasi livewire:form,, jadi ada prefix form
+                        @error('form.title') // karena kita implementasi livewire:form
+                    --}}
+                    <input wire:model="form.title" class="form-control" id="title" rows="3">
+                    @error('form.title')
                     <small class="text-danger d-block mt-1">{{ $message }}</small>
                     @enderror
                 </div>
 
                 <div class="mb-4">
                     <lable for="body" class="form-label">Body</lable>
-                    <textarea wire:model="body" class="form-control" id="body" rows="3"></textarea>
-                    @error('body')
+                    <textarea wire:model="form.body" class="form-control" id="body" rows="3"></textarea>
+                    @error('form.title')
                     <small class="text-danger d-block mt-1">{{ $message }}</small>
                     @enderror
                 </div>
