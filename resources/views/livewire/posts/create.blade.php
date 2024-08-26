@@ -21,7 +21,6 @@
 
     <div class="card">
         <div class="card-body">
-            <div class="card-body">
 
                 <h5 class="card-title">New Post</h5>
 
@@ -49,7 +48,6 @@
                     <button class="btn btn-primary">Submit</button>
                 </form>
 
-            </div>
         </div>
     </div>
 </div>
