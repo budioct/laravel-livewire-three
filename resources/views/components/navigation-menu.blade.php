@@ -17,10 +17,10 @@
                 {{-- :active="request()->routeIs('home')" meng-aktifkan css ketika users di halaman ini navbar akan nyala --}}
                 <x-nav-link :active="request()->routeIs('home')" href="{{ route('home') }}">Home</x-nav-link>
 
-                <x-nav-link :active="request()->routeIs('about')" href="{{ route('about') }}">About</x-nav-link>
+{{--                <x-nav-link :active="request()->routeIs('about')" href="{{ route('about') }}">About</x-nav-link>--}}
 
                 {{-- :href adalah route dynamic tanpa {{}} --}}
-                <x-nav-link :active="request()->routeIs('contact')" :href="route('contact')">Contact</x-nav-link>
+{{--                <x-nav-link :active="request()->routeIs('contact')" :href="route('contact')">Contact</x-nav-link>--}}
 
                 <x-nav-link :active="request()->routeIs('posts.*')" href="/posts">Posts</x-nav-link>
 
