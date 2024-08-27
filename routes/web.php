@@ -13,6 +13,7 @@ Route::middleware('auth')->group(function () {
     //Route::get('/posts', \App\Livewire\Posts\Index::class)->name('posts.index'); // di replice ke component timeline
     Route::get('/timeline', \App\Livewire\Timeline::class)->name('timeline');
     Route::get("/users/{user}", \App\Livewire\Users\Show::class)->name('users.show');
+    Route::get("/users", \App\Livewire\Users\Index::class)->name('users.index');
 });
 
 Route::get("/login", \App\Livewire\Auth\Login::class)
