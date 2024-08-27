@@ -1,19 +1,21 @@
-<div class="row">
-    <div class="col-md-6">
+<div>
+
+    @foreach($posts as $post)
 
         {{--
             include component livewire
-            <livewire:posts.create />
-            <folder-livewire:folder-posts.create-view-php-blade- />
+            <livewire:posts.block />
+            <folder-livewire:folder-posts.block-view-php-blade- />
+
+            <:post="$post">
+            <:key="$value"> key yang akan di binding pada model component Block
+
+            <wire:key="{{ $post->id }}>
+            event listener supaya reaktif terjadi pada antar component
+
         --}}
-        <livewire:posts.create/>
+        <livewire:posts.block :post="$post" wire:key="{{ $post->id }}"/>
 
-    </div>
-    <div class="col-md-6">
-        @foreach($posts as $post)
+    @endforeach
 
-            <livewire:posts.block :post="$post" wire:key="{{ $post->id }}" />
-
-        @endforeach
-    </div>
 </div>
