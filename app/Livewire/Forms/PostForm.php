@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -18,12 +19,19 @@ class PostForm extends Form
     {
         // user bisa banyak post
 
-        $user = \App\Models\User::find(1); // find by id user
+        $user_auth_id = Auth::user()->id; // find user authentication
+
+        $user = \App\Models\User::query()->find($user_auth_id); // find by id user
         //$save = $this->all(); // jika tidak menggunakan validasi // all() akan ambil semua attribute component
-        $save = $this->validate(); // validasi form input // validate() akan ambil semua attribute component
+        $data = $this->validate(); // validasi form input // validate() akan ambil semua attribute component
 
         // posts() adalah relasi ke model user()
-        $user->posts()->create($save); // proses eloquent model create
+        if (!$user) {
+            flash('User not found', 'error');
+            return;
+        }
+
+        $store_response = $user->posts()->create($data); // proses eloquent model create
 
         // alert dari laravel
         // session()->flash('message', 'Post successfully created.'); // (key, message) // handle alert setelah create data
@@ -32,6 +40,8 @@ class PostForm extends Form
         flash('Post successfully created.', 'success');
 
         $this->reset(); // reset() // akan otomatis instance $title $body menjadi blank '', setelah proses create()
+
+        return $store_response;
     }
 
     public function update(){}

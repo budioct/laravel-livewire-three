@@ -39,7 +39,7 @@
 
                     <div class="mb-4">
                         <lable for="body" class="form-label">Body</lable>
-                        <textarea wire:model="form.body" class="form-control" id="body" rows="3"></textarea>
+                        <textarea wire:model="form.body" class="form-control" id="body" rows="3" placeholder="What's on your mind?"></textarea>
                         @error('form.title')
                         <small class="text-danger d-block mt-1">{{ $message }}</small>
                         @enderror
